@@ -1,9 +1,6 @@
-#include <iostream>
-
-using namespace std;
+import cover_gen;
 
 int main(int argc, char** argv)
 {
-    cout << "hello world!" << endl;
     return 0;
 }
