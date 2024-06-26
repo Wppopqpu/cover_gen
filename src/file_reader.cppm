@@ -76,10 +76,10 @@ export class png_reader: public image_reader {
 
 					m_width = static_cast<image_size_t>(png_get_image_width(m_png_ptr, m_info_ptr));
 					m_height = static_cast<image_size_t>(png_get_image_height(m_png_ptr, m_info_ptr));
-					m_data = static_cast<pass_value_t **>(png_get_rows(m_png_ptr, m_info_ptr));
+					m_data = static_cast<unsigned char **>(png_get_rows(m_png_ptr, m_info_ptr));
 
 				}
-				~image() {
+				virtual ~image() override {
 					png_destroy_read_struct(&m_png_ptr, &m_info_ptr, nullptr);
 				}
 
@@ -101,7 +101,7 @@ export class png_reader: public image_reader {
 			private:
 				png_structp m_png_ptr = nullptr;
 				png_infop m_info_ptr = nullptr;
-				pass_value_t ** m_data;
+				unsigned char ** m_data;
 				image_size_t m_width, m_height;
 		};
 

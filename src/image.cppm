@@ -4,9 +4,8 @@ export module image;
 
 export using image_size_t = std::uint16_t;
 // to present a color pass (8 bits)
-export using pass_value_t = unsigned char;
+export using pass_value_t = unsigned;
 
-static_assert(sizeof(pass_value_t)==1);
 
 /**
  * @brief RGBA form of a fragment

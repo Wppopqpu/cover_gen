@@ -4,7 +4,7 @@ module;
 export module main;
 import cover_gen;
 import file_reader;
-import image;
+import pixelize;
 
 int main(int argc, char** argv)
 {
@@ -19,7 +19,8 @@ int main(int argc, char** argv)
 		png_reader reader;
 
 		auto image_p = reader.read_file(fpath);
-		to_alpha(std::cout, *image_p);
+		auto final_image = pixelized_image(*image_p, 10, 10);
+		to_alpha(std::cout, final_image);
 	} catch (read_failure & e) {
 		std::cerr << "Cannot read:\n"
 			<< e.what()

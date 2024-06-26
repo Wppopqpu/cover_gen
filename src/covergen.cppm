@@ -15,7 +15,6 @@ std::string get_group_name(image_size_t const x, image_size_t const y) {
 
 [[nodiscard]]
 char present_half_pass(pass_value_t const half_v) {
-	static_assert(sizeof(half_v) == 1);
 	assert(("Invalid half pass value.", half_v < 16));
 	if (half_v < 10) {
 		return '0' + half_v;
