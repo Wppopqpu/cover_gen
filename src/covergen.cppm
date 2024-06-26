@@ -78,9 +78,11 @@ export void to_alpha(std::ostream & out, image const & im) {
 	for (image_size_t row_count = 0; row_count < im.height(); ++row_count) {
 		out << "\t{\n";
 		for (image_size_t col_count = 0; col_count < im.width(); ++col_count) {
-			out << "\t\t\""
+			out << "\t\t{ \""
 				<< get_group_name(col_count, row_count)
-				<< "\",\n"
+				<< "\", "
+				<< col_count + 1 << ", " << col_count + 2
+				<< " },\n"
 				;
 		}
 		out << "\t},\n";
