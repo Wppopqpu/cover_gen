@@ -2,13 +2,13 @@
 
 add_rules("mode.debug", "mode.release")
 set_languages("c++20")
-add_requires("libpng", "argh")
+add_requires("libpng")
 set_policy("build.c++.modules", true)
 
 target("cover_gen")
     set_kind("binary")
     add_files("src/*.cppm")
-	add_packages("libpng", "argh")
+	add_packages("libpng")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
