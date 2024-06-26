@@ -48,7 +48,7 @@ export void to_alpha(std::ostream & out, image const & im) {
 	
 	for (image_size_t x = 0; x < im.width(); ++x) {
 		for (image_size_t y = 0; y < im.height(); ++y) {
-			out << "vim.api.nvim_set_hl(namespace, \""
+			out << "vim.api.nvim_set_hl(M.namespace, \""
 				<< get_group_name(x, y)
 				<< "\", {\n"
 					"\tbg = \"#"
@@ -86,6 +86,10 @@ export void to_alpha(std::ostream & out, image const & im) {
 		out << "\t},\n";
 	}
 	out << "}\n";
+
+	out << "\n"
+		"vim.api.nvim_set_hl_ns(M.namespace)\n"
+		;
 
 	out << "\n"
 		"return M";
