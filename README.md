@@ -12,7 +12,7 @@
 
 ```sh
 xmake -v && xmake install -o ~/.local/stow/cover_gen
-cd $_/.. ; stow -v2 -S cover_gen
+stow -d.. -v2 -S cover_gen
 ```
 (make sure your compiler supports **modules**!)
 
