@@ -83,13 +83,16 @@ export class png_reader: public image_reader {
 					png_destroy_read_struct(&m_png_ptr, &m_info_ptr, nullptr);
 				}
 
+				[[nodiscard]]
 				virtual image_size_t width() const override {
 					return m_width;
 				}
+				[[nodiscard]]
 				virtual image_size_t height() const override {
 					return m_height;
 				}
 
+				[[nodiscard]]
 				virtual fragment at(image_size_t const x, image_size_t const y) const override {
 					return {
 						.red = m_data[y][3*x],
