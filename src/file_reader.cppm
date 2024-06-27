@@ -3,6 +3,7 @@ module;
 #include <cstdio>
 #include <cassert>
 #include <string_view>
+#include <string>
 #include <memory>
 #include <stdexcept>
 #include <utility>
