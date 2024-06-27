@@ -19,7 +19,7 @@ stow -d.. -v2 -S cover_gen
 ### Usage
 
 ```sh
-cover_gen IMAGE OUTPUT_WIDTH OUTPUT_HEIGHT | TARGET_FILE
+cover_gen IMAGE OUTPUT_WIDTH OUTPUT_HEIGHT > TARGET_FILE
 ```
 
 it will generate a lua module contains the following items:
