@@ -52,16 +52,16 @@ export class pixelized_image: public image{
 		[[nodiscard]]
 		virtual fragment at(image_size_t const x, image_size_t const y) const override {
 			fragment sum { 0, 0, 0 };
+			image_size_t count = 0;
 
 			for (image_size_t row = x * m_raw.width() / m_width; row < (x+1) * m_raw.width() / m_width; ++row) {
 				for (image_size_t col = y * m_raw.height() / m_height; col < (y+1) * m_raw.height() / m_height; ++col) {
 					if (row >= 0 && row < m_raw.width() && col >= 0 && col < m_raw.height()) {
+						++count;
 						sum = sum + m_raw.at(row, col);
 					}
 				}
 			}
-
-			auto count = (m_raw.width()/m_width)*(m_raw.height()/m_height);
 
 			sum = sum / count;
 			// To make sure.
