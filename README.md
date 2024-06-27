@@ -4,6 +4,10 @@
 
 ---
 
+### Screenshot
+
+![screenshot](https://raw.github.com/wppopqpu/cover_gen/main/assets/screenshot.png)
+
 ### Installation
 
 ```sh
