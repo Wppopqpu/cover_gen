@@ -1,6 +1,6 @@
 # **cover_gen**
 
-## a tool for generating `alpha-nvim` images.
+## a tool for generating `alpha-nvim` images from **PNG** files.
 
 ---
 
