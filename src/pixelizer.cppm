@@ -7,7 +7,7 @@ export module pixelize;
 import image;
 
 [[nodiscard]]
-fragment operator+(fragment const a, fragment const b) {
+fragment operator+(fragment const & a, fragment const & b) {
 	return {
 		.red = a.red + b.red,
 		.green = a.green + b.green,
@@ -17,7 +17,7 @@ fragment operator+(fragment const a, fragment const b) {
 
 template <std::integral int_t>
 [[nodiscard]]
-fragment operator/(fragment const a, int_t devider) {
+fragment operator/(fragment const & a, int_t devider) {
 	return {
 		.red = a.red / devider,
 		.green = a.green / devider,
