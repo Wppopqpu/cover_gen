@@ -60,6 +60,7 @@ export void to_alpha(std::ostream & out, image const & im) {
 		}
 	}
 
+	/*
 	out << "\n"
 		"M.text = {\n"
 		;
@@ -69,6 +70,21 @@ export void to_alpha(std::ostream & out, image const & im) {
 			out << ' ';
 		}
 		out << "\",\n";
+	}
+	out << "}\n";
+	*/
+
+	out << "\n"
+		"local single = \""
+		;
+	for (image_size_t col_count = 0; col_count < im.width(); ++ col_count) {
+		out << ' ';
+	}
+	out << "\"\n"
+		"M.text = {\n"
+		;
+	for (image_size_t row_count = 0; row_count < im.height(); ++ row_count) {
+		out << "\tsingle,\n";
 	}
 	out << "}\n";
 
